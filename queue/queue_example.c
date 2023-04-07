@@ -13,9 +13,17 @@ int rear, front ;
 // function declration 
 // int isEmpty();
 // int isFull();
-void enQueue(int data); 
 
-// main methods 
+void enQueue(int data); 
+int  dequeue();
+int frontElement();
+int lastElement();
+
+// traverse or linear  search element  or display the queue elemetns 
+void traverQueue();
+
+
+// main methods ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐ 
 int main(){
 
     // initalise the value of the front and rear ;
@@ -23,11 +31,25 @@ int main(){
     rear = -1;
 
     // calling the enqueue function 
-    enQueue(2);
+    // enQueue(2);
+    // enQueue(20);
+    // enQueue(22);
+    // enQueue(23);
     enQueue(20);
-    enQueue(22);
-    enQueue(23);
     enQueue(21);
+    enQueue(22);
+    printf(" \n\n");
+    enQueue(23);
+    traverQueue();
+    int removeData = dequeue();
+    printf(" \n%d data is remove \n",removeData);
+
+    int fElement = frontElement();
+    printf("%d fornt elements of the queue 🤷‍♂️🤷‍♂️\n ",fElement);
+    int lsElement= lastElement();
+    printf("%d last element of the queue ⭐⭐ \n\n", lsElement);
+    traverQueue();
+
 }
 
 
@@ -86,4 +108,74 @@ void  enQueue(int data){
     printf("%d data is inserted at index of  %d \n", data,rear );
 }
 
-// dequeue opearation 
+// dequeue opearation
+// remove the elements from the queues 
+int  dequeue(){
+    // check for empty case 
+    if (isEmpty()==1)
+    {
+        printf("queue is empty \n");
+    }
+    
+
+
+    // check for the one elements present int he queue
+
+    if (front==rear)
+    {
+        int temp = queue[rear];
+        rear=front=-1;
+        return temp;
+    }
+    
+    // normal condition 
+    int temp = queue[front]; 
+    front++; // increment the front index bu the 1 value 
+    return temp;
+}
+
+
+
+//  getting the front elements 
+int frontElement(){
+    // we have to get the front element  or peek elements of the queue 
+
+    // check the empty condition 
+    if (isEmpty()==1){
+        printf("queue is empty 🤷‍♂️\n");
+    }
+    return queue[front];
+}
+
+
+
+// last or rear elements of the queue 🤷‍♂️🤷‍♂️🤷‍♂️
+
+int lastElement(){
+    // check the empty case 
+    if (isEmpty()==1)
+    {
+        printf("queue is empty \n");
+    }
+    return queue[rear];
+    
+}
+
+
+// traverse the queue 
+
+ void traverQueue(){
+    // check for the empty case 
+    if (isEmpty()==1)
+    {
+        printf("queue is empty \n");
+    }
+    
+    // use for loop for the traversing the queue element 
+    // this is know as linear search 
+    for (int  i = front; i <=rear; i++)
+    {
+        printf(" %d element  of queue at index of %d \n ",queue[front],i);
+    }
+    
+}

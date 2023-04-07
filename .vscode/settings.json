@@ -3,6 +3,7 @@
         "ostream": "cpp",
         "new": "cpp",
         "stdio.h": "c",
-        "conio.h": "c"
+        "conio.h": "c",
+        "algorithm": "c"
     }
 }
