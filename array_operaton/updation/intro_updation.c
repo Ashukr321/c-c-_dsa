@@ -93,11 +93,11 @@ void insertAtEnd(int data){
     // check for the empty case 
     if (isEmpty()==1)
     {
-        idx ++; 
         arr[idx]= data; 
+
     }
     // normal case 
-    idx++; 
+    idx++;
     arr[idx]= data; 
     printf("%d data is inserted at index of the %d \n", data , idx);
     
