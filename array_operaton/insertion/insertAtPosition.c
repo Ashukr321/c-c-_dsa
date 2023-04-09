@@ -72,6 +72,7 @@ void insertAtPosition(int data , int position){
         printf("array is full \n");
     }
 
+    // here we move right shift from idx to idx+1; right shift till we get postion-1 
     for (int  i =  idx; i >=position-1; i--)
     {
         arr[i+1] = arr[i];
