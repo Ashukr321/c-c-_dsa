@@ -48,7 +48,7 @@ int isEmpty(){
 
 // isFull()
 int isFull(){
-    if (idx == size -1 )
+    if (idx == size -1);
     {
         return 1; 
     }else{
