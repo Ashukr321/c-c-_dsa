@@ -17,6 +17,7 @@ int isOverflow();
 int isUnderflow();
 void peek();
 // push 
+void traverStack();
 void push(int data);
 void pop();
 
@@ -32,6 +33,7 @@ int main(){
     push(5);
      pop();
     peek();
+    traverStack();
 
 
     return 0; 
@@ -120,4 +122,22 @@ void peek(){
     int temp = stack[top];
     printf(" peek elements is %d   \n", temp);
 
+}
+
+// traverse the stack
+void traverStack(){
+    //check for the empty case
+    if (isUnderflow()==1)
+    {
+        printf(" stack is empty \n"); 
+        return ; 
+
+    }
+    
+    // for loop 
+    for (int  i = 0; i <= top; i++)
+    {
+        printf("%d \n", stack[i]);
+    }
+    
 }
