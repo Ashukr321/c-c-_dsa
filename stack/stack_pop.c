@@ -15,7 +15,7 @@ int stack[size];
 // function declration 
 int isOverflow();
 int isUnderflow();
-
+void peek();
 // push 
 void push(int data);
 void pop();
@@ -31,6 +31,8 @@ int main(){
     push(4);
     push(5);
      pop();
+    peek();
+
 
     return 0; 
 }
@@ -86,7 +88,7 @@ void push(int data ){
 void pop(){
     if (isUnderflow()==1)
     {
-        printf("stack is underflow");
+        printf("stack is underflow \n");
         return;
     }
     
@@ -103,4 +105,19 @@ void pop(){
 
 
     
+}
+
+
+// peek method of the stack 
+void peek(){
+    // check for the underflow()
+    if (isUnderflow()==1)
+    {
+        printf("stack is underflow \n");
+        return ;
+    }
+    
+    int temp = stack[top];
+    printf(" peek elements is %d   \n", temp);
+
 }
