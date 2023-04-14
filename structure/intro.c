@@ -9,12 +9,8 @@ int main(){
         
         int age;
         int enrollment_num;
-    };
+    } ashu, ankit ;
 
-
-    // here we create the class of the struct class 
-    // initailisation of the struct 
-    struct std ashu;
     printf("enter your  age ");
     scanf("%d",&ashu.age);
 
