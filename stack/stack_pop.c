@@ -1,4 +1,6 @@
+
 // preprocessor 
+
 #include<stdio.h>
 #include<conio.h>
 
@@ -11,18 +13,20 @@ int top ;
 // create the stack
 int stack[size];
 
-
 // function declration 
 int isOverflow();
 int isUnderflow();
 void peek();
-// push 
 void traverStack();
 void push(int data);
 void pop();
 
+
+
 // main methods start here 
 int main(){
+
+
     top = -1; 
 
     //calling the function 
@@ -31,13 +35,17 @@ int main(){
     push(3);
     push(4);
     push(5);
-     pop();
+
+    pop();
     peek();
     traverStack();
 
 
-    return 0; 
+    return 0;
+
 }
+
+
 
 
 // function declaration 
@@ -51,6 +59,8 @@ int isOverflow(){
     }
     
 }
+
+
 
 // isUnderflow
 int isUnderflow(){
@@ -86,6 +96,9 @@ void push(int data ){
     
 }
 
+
+
+
 // pop methods 
 void pop(){
     if (isUnderflow()==1)
@@ -97,17 +110,17 @@ void pop(){
     // check for one element 
     if(top==0){
         int temp = stack[top];
-         printf("%d  is delated \n",temp);
+         printf(" %d  is delated \n",temp);
         return;
     }
 
     int temp = stack[top];
     top--;
-     printf("%d  is delated \n",temp);
+     printf(" %d  is delated \n",temp);
 
-
-    
 }
+
+
 
 
 // peek method of the stack 
@@ -115,14 +128,15 @@ void peek(){
     // check for the underflow()
     if (isUnderflow()==1)
     {
-        printf("stack is underflow \n");
+        printf(" stack is underflow \n");
         return ;
     }
     
     int temp = stack[top];
-    printf(" peek elements is %d   \n", temp);
+    printf(" peek elements is %d \n", temp);
 
 }
+
 
 // traverse the stack
 void traverStack(){
@@ -141,3 +155,5 @@ void traverStack(){
     }
     
 }
+
+
