@@ -20,17 +20,18 @@
 // last node -> always null 
 
 // structre of the user defined struct  node 
+
 // struct Node {
 //     int data ; 
 //     struct   Node *ptr; 
 // };
 
-// memrory  allocatoin can be done in two ways 
+// memrory  allocatoin can be done in two ways
+
 // compile time memory allocation 
 // 2 runtime memory allocation in the c 
 
 // in c dynamic memory alloation is done in the 4 ways 
-
 // malloc  -> memmory allocation 
 // free -> free the memory 
 // calloc ()-> call the alloation 
