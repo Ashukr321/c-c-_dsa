@@ -9,13 +9,13 @@ struct Array
     int length;
 };
 
-// display all the elements of the array 
-void Dispaly(struct Array arr){
-    for (int  i = 0; i <arr.length; i++)
+// display all the elements of the array
+void Dispaly(struct Array arr)
+{
+    for (int i = 0; i < arr.length; i++)
     {
-        printf("%d ",arr.A[i]);
+        printf("%d ", arr.A[i]);
     }
-    
 }
 
 // main method
