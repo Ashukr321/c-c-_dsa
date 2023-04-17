@@ -47,7 +47,7 @@
 
 
 
-// 1  fucntion 1 
+// 1  function 1 
 
 // malloc() -> memory allocation 
 
