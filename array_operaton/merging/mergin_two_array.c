@@ -35,7 +35,7 @@ int arr1[size1];
 int arr2 [size2]; 
 
 
-// int arr3[size3];
+// int arr3[size3]; //new thing 
 //get the size for the arr3 by the help of the sizeof operator  
 // sizeOf(); 
 // int size3 = size1+size2;
