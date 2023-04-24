@@ -12,7 +12,6 @@ int main(){
         cout<<i<<endl ;
     }
 
-
     // pop_front-> remove the element from the front of the deque 
 
     d.pop_front();
@@ -25,6 +24,6 @@ int main(){
     d.push_back(20);
     // check the deque is empty or not 
     cout<<d.empty()<<endl;
-    
+
     return 0; 
 }
