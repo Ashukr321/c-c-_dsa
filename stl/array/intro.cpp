@@ -7,6 +7,7 @@
 #include<iostream>
 #include<array>
 using  namespace std; 
+
 int main(){
 
     // this is the normal array 
@@ -19,7 +20,7 @@ int main(){
 
     // here we see the example of the stl array  
 
-    array<int,4>a = {1,2,4,4};
+    array<int,4>a = {1,2,4};
         int size = a.size();// size methods is inbuilt in the stl array 
 
         for (int i = 0; i < size; i++)
@@ -40,5 +41,16 @@ int main(){
         // fornt and back 
         cout<< "first element of the array is -> "<<a.front()<<endl;
         cout<< "last element of the array is -> "<<a.back()<<endl;
+
+        // max_size // this gives the capacity of the array 
+
+        cout<< "maximum size of the array is -> "<<a.max_size()<<endl;
+
+        // begin  this is itertator 
+        cout<<"begin element  address of of the array "<<a.begin()<<endl;
+
+        // end this is also gives the address of the last element address 
+        cout<<"end element  address of of the array "<<a.end()<<endl;
+
     return 0; 
 }
