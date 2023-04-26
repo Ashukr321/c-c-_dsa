@@ -13,5 +13,6 @@
         "stdlib.h": "c",
         "iostream": "cpp",
         "stack": "cpp"
-    }
+    },
+    "docwriter.language": "English"
 }
