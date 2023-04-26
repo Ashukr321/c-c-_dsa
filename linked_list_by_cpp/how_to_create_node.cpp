@@ -1,54 +1,104 @@
-#include<iostream>
-using namespace std; 
+#include <iostream>
+using namespace std;
 
-//create the class of the  node
-class Node {
-    public:
-    // this is the access modifiers 
-    int data ; 
-    Node* next; 
+// create the class of the  node
+class Node
+{
+public:
+    // this is the access modifiers
+    int data;
+    Node *next;
 
-    // constructor used to set the value of the node 
-    Node(int data){
-        this->data= data;
-        this->next= NULL;
+    // constructor used to set the value of the node
+    Node(int data)
+    {
+        // this refers to the current class instance variables
+
+        this->data = data;
+        this->next = NULL;
     }
 };
-// main methods start here 
-int main(){
-
-    // here we create the object of the class 
-    Node * node1 = new Node(10);
-    Node * node2 = new Node(20);
-    Node * node3 = new Node(30);
-    Node * node4 = new Node(40);
 
 
-    // cout<<node1->data<<endl;// this will print the 0 
-    // cout<<node1->next<<endl;
+void insertAtPosition(Node * &head , int postion , int data);
 
-    // // here we set he value of the data 
-    // node1->data = 43; 
-    // node1->next = NULL;
+// function create for the insertAthead
+void insertAtHead(Node *&head, int data)
+{
+    // create a new node the  new data which is came
+    Node *newNode = new Node(data);
+    newNode->next = head;
+    head = newNode;
+}
 
-    // cout<<"after set the  data into  the node "<<endl;
+// insertAtend or insertAtTail of node 
+void insertAtTail(Node * &tail ,int data){
 
-    // cout<<node1->data<<endl;
-    // cout<<node1->next<<endl;
+    // here create a node for which data is came in the methods 
+    Node * newNode = new Node(data);
+    // here create a node  by the help of the constructor 
+    tail->next = newNode;
+    tail = tail->next;
 
+}
 
-    // here we linking the node 1 and other and print the  data 
-
-    node1->next= node2;
-    node2->next = node3;
-    node3->next = node4;
-
-    // print the data of the node3 by the help of the node 1
-    while (node1!=NULL )
+// create the methods for the print the node
+void printNode(Node *&head)
+{
+    // create a new Node temp
+    Node *temp = head;
+    while (temp!= NULL)
     {
-        cout<<node1->data<<endl;
-        node1 = node1->next;
+        cout << temp->data << "->";
+        temp = temp->next;
+    }
+}
+
+
+
+
+// main methods start here
+int main()
+{
+
+    Node *node1 = new Node(10);
+
+    // here we see the both head and tail are point to the same node 
+    Node *head = node1;
+    Node *tail = node1;
+
+    insertAtTail(tail, 20);
+    insertAtTail(tail, 10);
+    insertAtTail(tail, 30);
+    insertAtTail(tail, 50);
+    insertAtPosition(head,2,100);
+    printNode(head);
+    return 0;
+}
+
+
+// insertAtPosition(Node * &head , int position , int data );
+
+void insertAtPosition(Node * &head , int postion , int data){
+    // create temp node that point the head node 
+    Node * temp = head ;
+
+    int count = 1 ; 
+
+    // traverse  the node and goes to postion 
+    while (count<postion-1)
+    {
+        temp ->next= temp;
+        count++;// increment the count 
     }
     
-    return 0;
+    // create node for the new data 
+    Node * newNode = new Node(data);
+
+    // this is the logic of the inserting the node at the 
+    // given postion int the sinlgy linked list node 
+
+    newNode ->next = temp->next; 
+    temp->next =  newNode; 
+
 }
