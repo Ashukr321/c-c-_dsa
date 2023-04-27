@@ -83,6 +83,9 @@ int main(){
     insertAtHead(head,5);
     insertAtHead(head,4);
     delateHeadNode(head);
+    delateHeadNode(head);
+    insertAtHead(head,4);
+
     printNode(head);
     
 
