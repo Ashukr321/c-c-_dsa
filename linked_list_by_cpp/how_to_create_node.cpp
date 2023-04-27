@@ -20,7 +20,7 @@ public:
 };
 
 
-void insertAtPosition(Node * &head , int postion , int data);
+void insertAtPosition(Node * tail,Node * &head , int postion , int data);
 
 // function create for the insertAthead
 void insertAtHead(Node *&head, int data)
@@ -67,11 +67,11 @@ int main()
     Node *head = node1;
     Node *tail = node1;
 
-    insertAtTail(tail, 20);
-    insertAtTail(tail, 10);
-    insertAtTail(tail, 30);
-    insertAtTail(tail, 50);
-    insertAtPosition(head,2,100);
+    insertAtTail(tail,3);    
+    insertAtTail(tail,3);    
+    insertAtTail(tail,3);    
+
+    insertAtPosition(tail,head,3,100);
     printNode(head);
     return 0;
 }
@@ -79,17 +79,24 @@ int main()
 
 // insertAtPosition(Node * &head , int position , int data );
 
-void insertAtPosition(Node * &head , int postion , int data){
+void insertAtPosition(Node * tail,Node * &head , int position , int data){
     // create temp node that point the head node 
     Node * temp = head ;
 
     int count = 1 ; 
 
     // traverse  the node and goes to postion 
-    while (count<postion-1)
+    while (count<position-1)
     {
         temp ->next= temp;
-        count++;// increment the count 
+        count++;// increment the count  
+    }
+    
+    // insert at end 
+    if (temp->next==NULL)
+    {
+        insertAtTail(temp,data);
+        return;
     }
     
     // create node for the new data 
