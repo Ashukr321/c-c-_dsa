@@ -32,10 +32,11 @@ void print(Node *&head)
         cout << temp->data << " -> ";
         temp = temp->next;
     }
+    cout<<endl;
 }
 
 // insertion of the node at the head of the linked list
-void insertAtHead(Node * &head, int data)
+void insertAtHead(Node *&head, int data)
 {
     // here we  first have to create the a new node data for the new data
     Node *temp = new Node(data);
@@ -47,13 +48,29 @@ void insertAtHead(Node * &head, int data)
     head = temp; // here we upate the head pointer of the node
 }
 
+// get the length of the doubly linked list
+int getLength(Node *&head)
+{
+    int count = 0;
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
+
+
 // here start the main method
 int main()
 {
     // create the node
     Node *node1 = new Node(34);
     Node *head = node1;
-    insertAtHead(head,24);
+    insertAtHead(head, 24);
     print(head);
+    int l = getLength(head);
+    cout << "total number of node in the linked list is " << l << endl;
     return 0;
 }
