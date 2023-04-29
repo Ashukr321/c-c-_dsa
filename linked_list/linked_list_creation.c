@@ -42,9 +42,5 @@ struct  node
     printf("%d \n", head->data);
     printf("%d \n", second->data);
     printf("%d \n", third->data);
-
-
-
-   
     
  }
