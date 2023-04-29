@@ -54,11 +54,13 @@ void insertAtHead(Node *&head, int data)
 {
     // create a node for the new data
     Node *temp = new Node(data);
-    temp->next =head ;
-
+    temp->next =head ; // here temp move to the next node 
+    
     head->prev = temp;
+
     head = temp;
 }
+
 // MAIN METHODS START HERE ..
 int main()
 {
@@ -67,6 +69,7 @@ int main()
     Node *node1 = new Node(23);
     Node *head = node1;
     insertAtHead(head, 3);
+    insertAtHead(head, 20);
     insertAtHead(head, 4);
     delateNodeHead(head);
     print(head);
