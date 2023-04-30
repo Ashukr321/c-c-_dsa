@@ -1,4 +1,4 @@
-// how to create  a node in the c
+ // how to create  a node in the c
 // preprocessor
 #include <stdio.h>
 #include <stdlib.h>
