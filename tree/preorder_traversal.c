@@ -45,6 +45,37 @@ treenode * preorderTraversal(treenode * node)
     preorderTraversal(node->right);
 }
 
+// postorder traversal 
+// left , right and root 
+treenode* postorderTraversal(treenode * node ){
+    if (node== NULL)
+    {
+      return NULL;
+    }
+
+    // CALLING THE FUNCTION RECURSIVE 
+    postorderTraversal(node->left);
+    postorderTraversal(node->right);
+
+    // print the data 
+    printf("%d\t", node->data);
+
+    
+}
+
+// inorder traversal of the treenode 
+treenode* inorderTraversal(treenode * node){
+    if (node==NULL)
+    {
+        return NULL;
+    }
+    // POST ORDER 
+    // left and root and right 
+    inorderTraversal(node->left);
+    printf("%d ", node->data);
+    inorderTraversal(node->right);
+
+}
 // main methods start here
 int main()
 {
@@ -66,7 +97,12 @@ int main()
     // traverse the tree node by the help of the preorder traversal algo
     // preorder
     preorderTraversal(n1);
+    printf("\n\n");
+    
+    postorderTraversal(n1);
+    printf("\n\n");
 
+    inorderTraversal(n1);
     // free the all the treenode by the help of the free methods
     // free(n1);
     // free(n2);
