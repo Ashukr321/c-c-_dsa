@@ -99,10 +99,10 @@ int main()
     preorderTraversal(n1);
     printf("\n\n");
     
-    postorderTraversal(n1);
-    printf("\n\n");
+    // postorderTraversal(n1);
+    // printf("\n\n");
 
-    inorderTraversal(n1);
+    // inorderTraversal(n1);
     // free the all the treenode by the help of the free methods
     // free(n1);
     // free(n2);

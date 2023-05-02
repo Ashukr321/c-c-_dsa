@@ -68,6 +68,9 @@ struct node * delatAtBegin(struct node *head ){
     free(temp);
 }
 
+
+
+
 // main methods start her
 int main()
 {
