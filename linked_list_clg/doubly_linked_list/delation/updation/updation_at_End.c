@@ -56,69 +56,39 @@ struct node * insertAtBegin(struct node *head, int data)
 }
 
 
-// delation of the code at begin of the doubly linked list 
-
-// struct node * delatAtBegin(struct node *head ){
-//     struct node *temp = head;
-//     temp->next ->prev = NULL;
-//     //shifting the head pointer by one place 
-//     head = temp->next;
-//     temp->next= NULL;
-//     free(temp);
-
-//     return head;
-// }
-
-
-
-
-
-// ⭐⭐⭐⭐ delate from the end of the  node 
-// struct node *delateAtEnd(struct node * tail){
-
-//     struct node *temp = tail;
-//     // logic of the delation of the node
-//     temp= temp->prev;
-//     temp->prev = NULL; 
-//     temp->prev->next = NULL;
-//     return tail;
-// } 
-
-// ⭐⭐⭐⭐ delate from the end of the  node 
-struct node *delateAtEnd(struct node * head){
-
-    struct node *temp = head;
-    // logic of the delation of the node
-    while (temp->next !=NULL)
+// update  the data at the begin of the node 
+struct node * updateAtEnd(struct node *head, int data)
+{
+    if (head == NULL)
     {
-        temp = temp ->next;
+        head = create_node(data);
+        head->next = head;
     }
-    temp->prev->next = NULL;
-    temp->prev = NULL;
-    free(temp);
+    struct node *temp= head;
+
+    while (temp->next!=NULL)
+    {
+        temp= temp->next;
+    }
+    temp->data =data ;
     return head;
-} 
+}
 
 
 // main methods start her
 int main()
 {
-    struct node *head, *n1, *tail;
+    struct node *head, *n1;
 
     n1 = create_node(34);
     head = n1;
-    // tail= n1;
-
     head = insertAtBegin(head, 56);
     head = insertAtBegin(head, 6);
 
     head = insertAtBegin(head, 5);
     head = insertAtBegin(head, 4);
     // head =  delatAtBegin(head);
-    //  head = delatAtBegin(head);
-    // tail = delateAtEnd(tail);
-    head = delateAtEnd(head);
-
+    head= updateAtEnd(head ,500);
     traverse(head);
 
     return 0;
