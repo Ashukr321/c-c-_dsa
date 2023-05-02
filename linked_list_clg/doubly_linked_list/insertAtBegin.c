@@ -67,7 +67,7 @@ int main(){
     head = insertAtBegin(head ,4);
     head = insertAtBegin(head ,46);
     head = insertAtBegin(head ,5);
-
+    
     traverseNode(head);
 
     return 0;
