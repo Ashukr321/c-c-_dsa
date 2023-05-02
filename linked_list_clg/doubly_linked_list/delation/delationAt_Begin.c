@@ -64,8 +64,9 @@ struct node * delatAtBegin(struct node *head ){
     //shifting the head pointer by one place 
     head = temp->next;
     temp->next= NULL;
-    return head;
     free(temp);
+
+    return head;
 }
 
 

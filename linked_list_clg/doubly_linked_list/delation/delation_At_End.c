@@ -1,43 +1,34 @@
-// here we see the  delation of the doubly linked list
-// from the end of the node
+// here we see the how to delate the node from begin of the doubly linked list
 
-// preprocessor
+// preprocesseor
 #include <stdio.h>
 #include <stdlib.h>
 
-// create the struct node templets
-struct Node
+// create the sttucture of the node
+struct node
 {
     int data;
-    struct Node *next;
-    struct Node *prev;
+    struct node *next;
+    struct node *prev;
 };
 
-// create node methods
-struct Node *createNode(int data)
+// create a node
+
+struct node *create_node(int data)
 {
-    // create a new Node
-    struct Node *newNode;
-    //  memory allocation of the newNode
-    newNode = (struct Node *)malloc(sizeof(struct Node));
 
-    // set the data of the newNode and also se the data of the next and prev
+    struct node *new_node = (struct node *)malloc(sizeof(struct node));
+    new_node->data = data;
+    new_node->next = NULL;
+    new_node->prev = NULL;
 
-    newNode->data = data;
-    newNode->next = NULL;
-    newNode->prev = NULL;
-
-    // return the newNode that we create the node
-
-    return newNode;
+    return new_node;
 }
 
-
-// traverse the node by the while node
-void traverse(struct Node *head)
+// traverse the dll
+void traverse(struct node *head)
 {
-    // create the temp variables
-    struct Node *temp = head;
+    struct node *temp = head;
     while (temp != NULL)
     {
         printf("%d -> ", temp->data);
@@ -45,14 +36,90 @@ void traverse(struct Node *head)
     }
 }
 
+// insertion of the node at the begin of  the node
+struct node * insertAtBegin(struct node *head, int data)
+{
+    if (head == NULL)
+    {
+        head = create_node(data);
+        head->next = head;
+    }
 
-// main methods start here ...
+    struct node *temp= head;
+    struct node *new_node = create_node(data);
+
+
+    new_node->next= temp; 
+    temp->prev= new_node;
+    temp =new_node ;
+    return temp ;
+}
+
+
+// delation of the code at begin of the doubly linked list 
+
+// struct node * delatAtBegin(struct node *head ){
+//     struct node *temp = head;
+//     temp->next ->prev = NULL;
+//     //shifting the head pointer by one place 
+//     head = temp->next;
+//     temp->next= NULL;
+//     free(temp);
+
+//     return head;
+// }
+
+
+
+
+
+// ⭐⭐⭐⭐ delate from the end of the  node 
+// struct node *delateAtEnd(struct node * tail){
+
+//     struct node *temp = tail;
+//     // logic of the delation of the node
+//     temp= temp->prev;
+//     temp->prev = NULL; 
+//     temp->prev->next = NULL;
+//     return tail;
+// } 
+
+// ⭐⭐⭐⭐ delate from the end of the  node 
+struct node *delateAtEnd(struct node * head){
+
+    struct node *temp = head;
+    // logic of the delation of the node
+    while (temp!=NULL)
+    {
+        temp = temp ->next;
+    }
+    temp->prev->next = NULL;
+    temp->prev = NULL;
+    free(temp);
+    return head;
+} 
+
+
+// main methods start her
 int main()
 {
-    // create the node
-    struct Node *head, *n1;
-     n1= createNode(3);
-     head  = n1;
+    struct node *head, *n1, *tail;
+
+    n1 = create_node(34);
+    head = n1;
+    // tail= n1;
+
+    head = insertAtBegin(head, 56);
+    head = insertAtBegin(head, 6);
+
+    head = insertAtBegin(head, 5);
+    head = insertAtBegin(head, 4);
+    // head =  delatAtBegin(head);
+    //  head = delatAtBegin(head);
+    // tail = delateAtEnd(tail);
+    head = delateAtEnd(head);
+
     traverse(head);
+
     return 0;
 }
