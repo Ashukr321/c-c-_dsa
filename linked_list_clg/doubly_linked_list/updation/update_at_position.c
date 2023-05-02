@@ -96,7 +96,7 @@ int main()
     head = insertAtBegin(head, 5);
     head = insertAtBegin(head, 4);
     // head =  delatAtBegin(head);
-     head = updateAtPosition(head,  4000, 5);
+     head = updateAtPosition(head,  4000, 3);
 
     traverse(head);
 
