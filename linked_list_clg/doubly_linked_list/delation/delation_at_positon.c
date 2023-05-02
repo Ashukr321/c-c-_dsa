@@ -72,11 +72,11 @@ struct node * delatAtPosition(struct node *head, int pos)
     struct node *temp = head;
 
     int cnt = 0;
-    while (temp != NULL)
-    {
+    while (temp!= NULL){
+            cnt++;
+
         if (cnt == pos)
         {
-            cnt++;
             break;
         }
         temp = temp->next;
