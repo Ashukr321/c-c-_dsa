@@ -56,6 +56,26 @@ struct node *inOrderTraversal(struct node *root)
     inOrderTraversal(root->rigth);
 }
 
+
+
+//post order traversal in  the node js 
+// left right root 
+struct node *postOrderTraversal(struct node *root){
+    if (root == NULL)
+    {
+        return NULL;
+
+    }
+    // recursive call of the  post order traversal 
+
+    postOrderTraversal(root->left);
+    postOrderTraversal(root->rigth);
+
+    printf("%d ", root->data);
+
+
+}
+
 // main methods start here ..
 int main()
 {
@@ -92,10 +112,13 @@ int main()
     rigth_rigth->left = rigth_rigth_rigth_left;
 
     printf("preorder traversal of the node \n");
-
     preOrderTraversal(root);
 
     printf("\nin order traversal \n");
     inOrderTraversal(root);
+
+
+     printf("\n\npost  order traversal \n");
+    postOrderTraversal(root);
     return 0;
 }
