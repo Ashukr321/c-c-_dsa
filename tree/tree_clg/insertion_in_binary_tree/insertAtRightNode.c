@@ -13,8 +13,7 @@ struct node
     struct node *right;
 };
 
-
-// create node 
+// create node
 
 struct node *createNode(int data)
 {
@@ -25,11 +24,11 @@ struct node *createNode(int data)
     return temp;
 }
 
-// preorder 
+// preorder
 
 void preorder(struct node *root)
 {
-    if (root!= NULL)
+    if (root != NULL)
     {
         printf("%d -> ", root->data);
         preorder(root->left);
@@ -41,7 +40,7 @@ void preorder(struct node *root)
 
 void inorder(struct node *root)
 {
-    if (root!= NULL)
+    if (root != NULL)
     {
         inorder(root->left);
         printf("%d ", root->data);
@@ -53,7 +52,7 @@ void inorder(struct node *root)
 
 void postorder(struct node *root)
 {
-    if (root!= NULL)
+    if (root != NULL)
     {
         postorder(root->left);
         postorder(root->right);
@@ -61,22 +60,53 @@ void postorder(struct node *root)
     }
 }
 
+// insertAtRight of the node
 
-int main(){
-    struct node *root , *n1, *n2 ,*n3 ; 
+// here node is the source node where we are going to insert the node
+struct node *insertAtRight(struct node *node, int data)
+{
+    // case 1 check for the emptu case if the
+    // tree have no node of the element then the  we create a node and return it
+    if (node == NULL)
+    {
+        node = createNode(data);
+        return node;
+    }
+
+    // check 2  if the only 1 node in the tree then
+    if (node->right == NULL)
+    {
+        node->right = createNode(data);
+        return node;
+    }
+
+    // case3 if their is already node is present then
+
+    // create a node
+    struct node *temp = createNode(data);
+
+    temp->right = node->right;
+    node->right = temp;
+    return node;
+}
+int main()
+{
+    struct node *root, *n1, *n2, *n3;
 
     n1 = createNode(23);
-    root = n1 ; 
-    
-    n2 = createNode(10);
-    n3 = createNode(400);
+    // root = n1;
 
+    // n2 = createNode(10);
+    // n3 = createNode(400);
 
-    // linking the node 
-    
-    n1->left = n2;
-    n1->right = n3;
+    // linking the node
+
+    // n1->left = n2;
+    // n1->right = n3;
+    n1= insertAtRight(n1,100);
+
+    root = n1;
     preorder(root);
     printf("\n");
-    return 0; 
+    return 0;
 }
