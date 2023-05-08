@@ -46,7 +46,6 @@ struct node *insertLeftNode(struct node *node, int data)
         return node;
     }
 
-   
     struct node *nn;
     nn = createNode(data);
     nn->left = node->left;
@@ -66,6 +65,50 @@ void preorder(struct node *node)
         preorder(node->right);
     }
 }
+// search node int he tree
+// here key is the data of the node
+int search(struct node *root, int key)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+
+    if (root->data == key)
+    {
+        return 1;
+    }
+     search(root->left, key);
+    search(root->right, key);
+}
+
+// height of the tree in the node
+
+int height(struct node *root)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+
+   // if the root is only one element then 
+   
+    if (root->left == NULL && root->right == NULL)
+    {
+        return 0;
+    }
+
+    if (root->left ==NULL && root->right !=NULL)
+    {
+        return 1+ height(root->right);
+    }
+    
+     if (root->right ==NULL && root->left !=NULL)
+    {
+        return 1+ height(root->left);
+    }
+}
+
 
 // main methods start here  ....
 int main()
@@ -85,6 +128,16 @@ int main()
     n1 = insertLeftNode(n1, 100);
     // n3= insertLeftNode(n3,500);
     preorder(root);
+    printf("\n\n");
+
+
+    int data = search(root, 20);
+    printf("%d", data);
     printf("\n");
+
+    int h = height(root);
+    printf("%d", data);
+    printf("\n");
+
     return 0;
 }
