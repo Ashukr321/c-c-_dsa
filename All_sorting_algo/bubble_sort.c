@@ -1,9 +1,8 @@
 // bubble sort
 #include <stdio.h>
 
-
-// here we  by the  help of the double referencing we ge the value of the array 
-// and swap it 
+// here we  by the  help of the double referencing we ge the value of the array
+// and swap it
 
 void swap(int *a, int *b)
 {
@@ -17,26 +16,24 @@ void swap(int *a, int *b)
 // a is the array and n is  the size of the array
 void buble_sort(int arr[], int n)
 {
-    int i, j;
+    int i, j, flag;
+
     // this is the for pass interation
 
     for (i = 0; i < n - 1; i++)
     {
-        // this  is for comparision
-
+        flag = 0;
         for (j = 0; j < n - i - 1; j++)
         {
-
-            // check  condition and swap it
             if (arr[j] > arr[j + 1])
             {
-                // int temp  = arr[j];
-                // arr[j]= arr[j+1];
-                // arr[j+1]= temp;
-                swap(&arr[j],&arr[j+1]);
-
+                swap(&arr[j], &arr[j + 1]);
+                flag = 1;
             }
         }
+
+        if (flag == 0)
+            break;
     }
 }
 
@@ -55,14 +52,15 @@ void print_array(int a[], int n)
 // main methods start her
 int main()
 {
-    int arr[] = {3,5,7,5,3};
+    //  create a array of number of the elements 
+    
+    int arr[] = {3, 5, 7, 5, 3,45,4,4,45,34,524,5,2};
     // take all the data from the users
 
-   
     // size of the array
     int n = sizeof(arr) / sizeof(int);
     buble_sort(arr, n);
-    // print the array 
+    // print the array
     print_array(arr, n);
 
     return 0;
