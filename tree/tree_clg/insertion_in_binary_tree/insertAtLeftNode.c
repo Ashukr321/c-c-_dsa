@@ -78,9 +78,11 @@ int search(struct node *root, int key)
     {
         return 1;
     }
-     search(root->left, key);
-    search(root->right, key);
+    return search(root->left, key);
+    return  search(root->right, key);
 }
+
+
 
 // height of the tree in the node
 
@@ -88,27 +90,30 @@ int height(struct node *root)
 {
     if (root == NULL)
     {
-        return 0;
+        return -1;
     }
 
-   // if the root is only one element then 
-   
-    if (root->left == NULL && root->right == NULL)
-    {
-        return 0;
-    }
+    // if the root is only one element then
 
-    if (root->left ==NULL && root->right !=NULL)
+    int lh = height(root->left);
+    int rh = height(root->right);
+    if (lh>=rh)
     {
-        return 1+ height(root->right);
+        return lh+1;
+    }else{
+       return rh+1;
     }
     
-     if (root->right ==NULL && root->left !=NULL)
-    {
-        return 1+ height(root->left);
-    }
+
 }
 
+int  getSize( struct node * root){
+    if(root==NULL)
+        return 0;
+    else
+        return 1+getSize(root->left)+getSize(root->right);
+
+}
 
 // main methods start here  ....
 int main()
@@ -119,7 +124,6 @@ int main()
     root = n1;
     n2 = createNode(20);
     n3 = createNode(30);
-    n4 = createNode(40);
 
     n1->left = n2;
     n1->right = n3;
@@ -130,14 +134,15 @@ int main()
     preorder(root);
     printf("\n\n");
 
-
-    int data = search(root, 20);
+    int data = search(root, 100);
     printf("%d", data);
     printf("\n");
 
     int h = height(root);
-    printf("%d", data);
+    printf("%d", h);
     printf("\n");
 
+    int s = getSize(root);
+    printf("%d ", s);
     return 0;
 }
