@@ -12,21 +12,35 @@ struct Node
     // constructor
     Node(int d)
     {
-         data = d;
+        data = d;
         next = NULL;
     }
 };
-// print the liked list 
-void print (struct Node * head){
+// print the liked list
+void print(struct Node *head)
+{
     cout << "Linked List : ";
     struct Node *temp1 = head;
-    while (temp1!= NULL)
+    while (temp1 != NULL)
     {
         cout << temp1->data << " ";
         temp1 = temp1->next;
     }
     cout << endl;
 }
+
+// recursive print the linked list
+
+void rprint(struct Node *head)
+{
+    if (head == NULL)
+        return;
+
+    cout << head->data << " ";
+    rprint(head->next);
+
+}
+
 // main methods
 int main()
 {
@@ -40,7 +54,7 @@ int main()
     temp->next = temp2;
 
     // printing the linked list
-    print(head);
-
+    // print(head);
+    rprint(head);
     return 0;
 }
