@@ -19,8 +19,29 @@ struct node
     }
 };
 
-// print the node 
 
+// update the data at given position 
+void updatDataPosition ( struct node * root , int pos , int data){
+    struct node * temp = root ; 
+
+    int cnt = 0 ;
+    if(root == NULL){
+        return;
+    }
+   while (temp!=NULL)
+   {
+        cnt++;
+        if (cnt== pos-1)
+        {
+            break;
+        }
+        temp= temp ->next;
+        
+   }
+   temp ->data = data;
+   
+   
+}
 
 //insertNode at given postion 
 struct node * insertAtPosition(struct node *head, int pos , int data){
@@ -57,6 +78,7 @@ struct node * insertAtPosition(struct node *head, int pos , int data){
    return head;
 
 }
+// print the node 
 
 void print(node *head) 
 { 
@@ -73,6 +95,8 @@ void print(node *head)
 int main(){ 
     struct node * head  = new node(9);
     head = insertAtPosition(head, 2,30);
+    updatDataPosition(head,3,1000);
+
     print(head);
     return 0 ; 
 
