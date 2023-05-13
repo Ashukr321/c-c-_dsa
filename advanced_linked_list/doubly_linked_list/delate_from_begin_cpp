@@ -1,0 +1,43 @@
+// delate from begin in the doubly linked list
+
+// preprocessor
+#include <iostream>
+using namespace std;
+
+// create strcut fordoubly linked list
+struct Node
+{
+    int data;
+    struct node *next;
+    struct node *prev;
+
+    // constructor
+    node(int x)
+    {
+        data = x;
+        next = NULL;
+        prev = NULL;
+    }
+}
+
+//
+
+// print the LINKED list by
+void print(sturct node *  head){
+    if(head == NULL){
+        return;
+    }
+    struct node *temp= head; 
+    while (temp!=NULL)
+    {
+        cout<<temp->data<<" ";
+        temp = temp->next;
+    }
+    
+
+}
+//main methods start here .. 
+int main(){
+
+    return 0 ; 
+}
