@@ -10,7 +10,7 @@ void bubbleSort(int arr[], int n)
 
     // outer loop  for number of te phase
     for (int i = 0; i < n - 1; i++)
-    {
+    {      int flag = 0;
         // inner loop for the comparision of the elements of the array
         for (int j = 0; j < n - 1 - i; j++)
         {
@@ -21,7 +21,11 @@ void bubbleSort(int arr[], int n)
                 int temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
+                flag = 1;
             }
+        }
+        if (flag == 0){
+            break;
         }
     }
 }
