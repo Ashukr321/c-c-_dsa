@@ -10,7 +10,7 @@ void selectionSort(int arr[], int n)
     // local variables
 
     // outer loop phase
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n-1; i++)
     {
 
         // let set and maan lete hai ki first element is shortest element
@@ -48,7 +48,7 @@ void print(int arr[], int n)
 // main methods start
 int main()
 {
-    int arr[] = {4, 3, 1, 2, 1, 3, 5, 3, 44, 32, 45};
+    int arr[] = {4, 3, 1, 2, 1, 3, 5, 3, 44, 32, 4};
 
     int n = sizeof(arr) / sizeof(int);
     printf("before selecton sorting \n");
