@@ -5,6 +5,7 @@
         "initializer_list": "c",
         "utility": "c",
         "stdlib.h": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "ostream": "cpp"
     }
 }
