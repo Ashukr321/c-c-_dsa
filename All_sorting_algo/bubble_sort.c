@@ -13,12 +13,15 @@ void swap(int *a, int *b)
 
 // buble sort
 
+
 // a is the array and n is  the size of the array
 void buble_sort(int arr[], int n)
 {
     int i, j, flag;
 
     // this is the for pass interation
+
+    // outer loop for the number of phase 
 
     for (i = 0; i < n - 1; i++)
     {
@@ -31,7 +34,6 @@ void buble_sort(int arr[], int n)
                 flag = 1;
             }
         }
-
         if (flag == 0)
             break;
     }
@@ -48,6 +50,8 @@ void print_array(int a[], int n)
     }
     printf("\n");
 }
+
+
 
 // main methods start her
 int main()

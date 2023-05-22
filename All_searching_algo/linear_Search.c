@@ -9,7 +9,7 @@
 
 int linearSearch(int arr[], int n, int key)
 {
-    for (int i = 0; i< n; i++)
+    for (int i = 0; i < n; i++)
     {
         if (arr[i] == key)
         {
@@ -24,8 +24,12 @@ int main()
     // create a array
     int arr[] = {334, 34, 3, 43, 3, 3, 32, 3, 43, 4, 34, 4, -4};
     int n = sizeof(arr) / sizeof(int);
-    int key = -4;
-   int key_index = linearSearch(arr,n,key);
-    printf("%d",key_index);
+    // set the key value
+
+    int key = 43;
+    // call the linear search method that return the key_index of  key valye 
+    int key_index = linearSearch(arr, n, key);
+
+    printf("%d", key_index);
     return 0;
 }

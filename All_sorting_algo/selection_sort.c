@@ -27,7 +27,7 @@ void selectionSort(int arr[], int n)
 {
 
     // declare the  variables
-    int i, j, min_index;
+    int  min_index;
 
     for (int i = 0; i < n - 1; i++)
     {
@@ -40,7 +40,7 @@ void selectionSort(int arr[], int n)
 
             // calling the swap methods
             //  here we pass the address of the array
-                swap(arr[min_index], arr[i]); //
+             swap(arr[min_index], arr[i]); //
         }
     }
 }
