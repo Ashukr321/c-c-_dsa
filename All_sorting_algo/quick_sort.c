@@ -17,8 +17,6 @@ right subarray
 again left subarray and right subarray mannage till the
 in same manner till we reach individual
 
-
-
 */
 //  preprocessor
 #include <stdio.h>
